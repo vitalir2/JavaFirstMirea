@@ -1,6 +1,5 @@
 package ru.mirea.task14;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -26,16 +25,7 @@ public class CardGameConsole {
                 System.out.println("botva");
                 break;
             }
-            int firstPlayerCard = firstPlayerCards.pop();
-            int secondPlayerCard = secondPlayerCards.pop();
-            if (firstPlayerCard < secondPlayerCard || (firstPlayerCard == 9 && secondPlayerCard == 0)) {
-                secondPlayerCards.add(0, firstPlayerCard);
-                secondPlayerCards.add(0, secondPlayerCard);
-            } else {
-                firstPlayerCards.add(0, firstPlayerCard);
-                firstPlayerCards.add(0, secondPlayerCard);
-            }
-            ++turnCount;
+            turnCount = CardGameGraphical.doTurn(firstPlayerCards, secondPlayerCards, turnCount);
         }
         if (firstPlayerCards.empty()) {
             System.out.println("second " + turnCount);
