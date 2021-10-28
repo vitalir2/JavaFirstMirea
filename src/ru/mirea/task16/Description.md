@@ -45,3 +45,6 @@ UserSettingsScreen, AddAnalysisToPatientScreen, CurrentAppointmentScreen,
 FutureAppointmentsScreen (both for doctor and patient?),
 AnalysisResultsScreen; UserDatabase (Singleton), UserRepository?,
 AppointmentFactory; "Some interfaces to implement similar logic";
+
+Update: понял, что все не так серьезно, но тогда не знаю как и сделать
+сложную UML схему.
