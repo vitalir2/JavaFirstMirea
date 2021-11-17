@@ -3,6 +3,7 @@
 Приложение создано для удобного взаимодействия между
 пациентами и врачами.
 
+__UPD__: часть фич (скорее всего все, кроме фич, связанных с главным экраном) будут оставлены до лучших времен.
 Для пациентов приложение позволяет:
 - зайти в свой личный кабинет и отредактировать поменявшиеся данные
 - посмотреть историю посещения врачей, результаты их посещения
@@ -34,12 +35,9 @@
 
 (Для каждой из вышеперечисленных фич свой экран).
 ## Стек используемых технологий
-Если было бы возможным, то написал бы на Джаве на мобильные устройства (Андроид).
-А так, скорее всего: Джава, Swing. Сам проект будет построен по принципу
-Clean Architecture (три слоя: ui, domain и data, т.е. интерфейс пользователя,
-бизнес логика и дата слой).
-## Примерный UML проекта
-User <- Doctor & Patient; MainScreen, AppointmentDetailsScreen,
+Java (17 version), Swing. Архитектура проекта будет построена по MVC.
+## Примерный UML проекта (которого нету =) )
+User <- Doctor & Patient; Screen, MainScreen, AppointmentDetailsScreen,
 PatientDetailsScreen, AppointmentHistoryScreen, MakeAppointmentScreen,
 UserSettingsScreen, AddAnalysisToPatientScreen, CurrentAppointmentScreen,
 FutureAppointmentsScreen (both for doctor and patient?),
