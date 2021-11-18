@@ -1,5 +1,8 @@
 package ru.mirea.project.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class User {
     private static long uidCounter = 1;
 
@@ -8,6 +11,11 @@ public abstract class User {
     private int age;
     private Gender gender;
     private String timestampUserCreated;
+    private final List<Appointment> appointments;
+
+    public User() {
+        this("", -1, Gender.OTHER, "");
+    }
 
     public User(String fullName, int age, Gender gender, String timestampUserCreated) {
         this.uid = uidCounter++;
@@ -15,6 +23,7 @@ public abstract class User {
         this.age = age;
         this.gender = gender;
         this.timestampUserCreated = timestampUserCreated;
+        this.appointments = new ArrayList<>();
     }
 
     public String getFullName() {
@@ -60,5 +69,24 @@ public abstract class User {
 
     public long getUid() {
         return uid;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", fullName='" + fullName + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", timestampUserCreated='" + timestampUserCreated + '\'' +
+                '}';
+    }
+
+    public List<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public void addAppointment(Appointment appointment) {
+        appointments.add(appointment);
     }
 }
