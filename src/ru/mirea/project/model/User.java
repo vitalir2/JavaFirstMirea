@@ -2,6 +2,7 @@ package ru.mirea.project.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class User {
     private static long uidCounter = 1;
@@ -80,6 +81,19 @@ public abstract class User {
                 ", gender=" + gender +
                 ", timestampUserCreated='" + timestampUserCreated + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return uid == user.uid && age == user.age && fullName.equals(user.fullName) && gender == user.gender && timestampUserCreated.equals(user.timestampUserCreated) && appointments.equals(user.appointments);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(uid, fullName, age, gender, timestampUserCreated, appointments);
     }
 
     public List<Appointment> getAppointments() {
