@@ -17,7 +17,7 @@ public class MainScreen {
     // Now without any graphics, later I'm going to add some
 
     private static final Scanner reader = new Scanner(System.in);
-    private static final UserDatabase userDatabase = new UserDatabase();
+    private static final UserDatabase userDatabase = UserDatabase.getInstance();
 
     private static User currentUser;
 

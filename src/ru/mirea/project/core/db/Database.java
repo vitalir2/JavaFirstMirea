@@ -3,9 +3,7 @@ package ru.mirea.project.core.db;
 import java.util.HashMap;
 import java.util.Map;
 
-// TODO: Change to singleton
 public class Database<K, V> {
-
     private static final String DEFAULT_NAME = "db";
 
     protected String name;

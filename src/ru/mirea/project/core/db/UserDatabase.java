@@ -11,7 +11,20 @@ public class UserDatabase extends Database<Long, User> {
 
     private static final String DEFAULT_NAME = "userDb";
 
-    public UserDatabase() {
+    private volatile static UserDatabase INSTANCE;
+
+    public static UserDatabase getInstance() {
+        if (INSTANCE == null) {
+            synchronized (UserDatabase.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new UserDatabase();
+                }
+            }
+        }
+        return INSTANCE;
+    }
+
+    private UserDatabase() {
         super();
         name = DEFAULT_NAME;
     }
