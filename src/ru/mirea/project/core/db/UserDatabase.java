@@ -10,7 +10,6 @@ import java.util.Date;
 public class UserDatabase extends Database<Long, User> {
 
     private static final String DEFAULT_NAME = "userDb";
-
     private volatile static UserDatabase INSTANCE;
 
     public static UserDatabase getInstance() {
@@ -29,6 +28,7 @@ public class UserDatabase extends Database<Long, User> {
         name = DEFAULT_NAME;
     }
 
+    // I've understood that it should be in the appointment db with true implementation by the help from the unit tests =)
     public Appointment findByDate(Date date) {
         return Appointment.of(new Doctor(), new Patient(), date);
     }
